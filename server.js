@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const receiptRoutes = require("./routes/receiptRoutes");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -11,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    //allow requests fro, anywhere
+    //allow requests from, anywhere
     origin: "*",
   })
 );
@@ -20,3 +21,5 @@ mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
+
+app.use(receiptRoutes);
