@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const receiptSchema = new Schema(
   {
     name: { type: String, required: true },
-    cost: { type: Number, required: true },
+    cost: { type: String, required: true },
     location: { type: String, required: true },
     id: { type: String, required: true }, // this will be the uuid
   },
