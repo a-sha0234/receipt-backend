@@ -18,7 +18,7 @@ app.use(
 );
 
 mongoose
-  .connect(process.env.DB, { useNewUrlParser: true })
+  .connect(process.env.DBURL, { useNewUrlParser: true })
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
